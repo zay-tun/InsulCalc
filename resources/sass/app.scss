@@ -1,0 +1,18 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "bootstrap/scss/bootstrap";
+
+.screen-height {
+    min-height: 100vh;
+}
+
+.form-border {
+    border: 3px solid $white;
+    padding: 40px;
+    border-radius: 0.25rem;
+}
