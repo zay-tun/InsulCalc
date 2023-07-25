@@ -7,10 +7,10 @@
 
 ## Development journey
 
-I need to work on two different parts - backend API and frontend UI. At first, I thought I need to go for Laravel version 7 because that's where we used to create api endpoints from controllers and hit it from vue. My plan is:
+For this test, I needed to work on two different parts - backend API and frontend UI. At first, I thought that I needed to go for Laravel version 7 because that's where we used to create API endpoints from controllers and hit it from VueJS. My plan was:
 
--   Install Laravel version 7
--   Install laravel/ui:^2.4 and do php artisan ui vue
+-   To install Laravel version 7
+-   To install laravel/ui:^2.4 and do php artisan ui vue
 
 But that didn't work out when my local PHP version stays at 8.1.19. I thought that I couldn't go for Laravel version 10 with laravel/ui because they've modified it with Livewire and InertiaJS. I still gave it a shot and made it work - version 10 and laravel/ui package.
 
