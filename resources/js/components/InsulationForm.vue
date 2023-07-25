@@ -102,7 +102,6 @@ export default {
     data() {
         return {
             insulation: {
-                email: "",
                 length: 1,
                 width: 1,
                 height: 1,

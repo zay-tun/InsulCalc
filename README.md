@@ -1,66 +1,29 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## Steps to run
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+-   clone .env.example and save as .env file
+-   composer install
+-   npm install && npm run dev
+-   php artisan serve(in another tab)
 
-## About Laravel
+## Development journey
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+I need to work on two different parts - backend API and frontend UI. At first, I thought I need to go for Laravel version 7 because that's where we used to create api endpoints from controllers and hit it from vue. My plan is:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+-   Install Laravel version 7
+-   Install laravel/ui:^2.4 and do php artisan ui vue
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+But that didn't work out when my local PHP version stays at 8.1.19. I thought that I couldn't go for Laravel version 10 with laravel/ui because they've modified it with Livewire and InertiaJS. I still gave it a shot and made it work - version 10 and laravel/ui package.
 
-## Learning Laravel
+After that, I've worked on creating an API end point first but at the same time, I didn't know the logic to calculate the insulation. I was browsing for a while but eventually, I decided to worship the AI God and asked the calculation formula. Because I'm sure that this is not about finding the formula but working on the web development.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+With the formula, it was easy to set up the controller function and tested it with POSTMAN. I did spend some time to add validations but it was unnecessary. I faced controller import error inside API route but I solved it and moved on. I can hand out the laravel.log file for details if you would like to examine my novice style errors.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+I thought about using Tailwind but I'm not confident enough to choose it for responsive design(I do like to work with it more to build up my courage). Just for the calculation form, I could use it and make it responsive but I'm back with good old Bootstrap this time.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Build up the form, made it render on initial call, connected with the API endpoint and got the result. I wanted to make the design a little more appealing and hence, tried to change the font style plus overall design. I made four inputs as number type and one input as select box. A little weird with the browser design but I thought that this is a lot better than normal inputs.
 
-## Laravel Sponsors
+Couldn't make it work for the font style changes but I got it at the end and used Poppins font. Got confused a little bit when initial installation comes with Tailwind CDN and UI with Tailwind classes. Bootstrap was already there from the start and I was able to use it successfully.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Wanted to add validations on frontend and decided to use vee-validate. Created a global validator to remove repititive validation logics.
 
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Showed the calculation result at the bottom of the form and made it disappear after 4 seconds rather than leaving it all the time.
