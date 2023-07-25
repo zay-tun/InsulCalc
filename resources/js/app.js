@@ -15,10 +15,11 @@ import { createRouter, createWebHistory } from "vue-router";
  */
 import "../js/validation";
 import App from "./components/App.vue";
-import InsulationForm from "./components/InsulationForm.vue";
+import { routes } from "./routes";
+
 const router = createRouter({
     history: createWebHistory(),
-    routes: [{ path: "/", component: InsulationForm }],
+    routes: routes,
 });
 const app = createApp(App);
 app.use(router);
